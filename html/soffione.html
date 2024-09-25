@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style>
+		@font-face {
+		    font-family: 'MyFont'; /* 自定义字体的名称 */
+		  /* src: url('../fonts/MysteryTypewriter.ttf') format('truetype'); */
+		   src: url('../fonts/SpecialElite-YOGj.ttf') format('truetype');
+			/* src: url('../fonts/Galmuri9.ttf') format('truetype'); */
+		    font-weight: normal;
+		    font-style: normal;
+		}
+		
+		*{
+			margin: 0%;
+			padding: 0%;
+		}
+		
+		body, html{
+			height: 100%;
+		}
+		
+		body{
+			font-family: 'MyFont', sans-serif;
+			background-image: url('../image/soffione/bg.png');
+			/* background-color: rgba(0, 0, 0, 0.1); */
+			background-color: black;
+			background-size:cover;
+			background-position: center;
+			background-repeat: no-repeat;
+			overflow: clip;
+			 z-index: -9999
+		}
+		div {
+			position: relative;
+			display: block;
+			margin: 0%;
+		
+		}
+		
+		h4 {
+			position: relative;
+			top: 40px;
+			left: 10px;
+			display: block;
+			/* color: #3b54d1; */
+			 color:#141a3b;
+			z-index: 99999;
+			font-size:20px;
+		}
+		
+		h5 {
+			position: relative;
+			display: block;
+			top: 0px;
+			left: 5px;
+			/* color: #3b54d1; */
+			 color:#141a3b;
+		}
+		
+		a {
+			text-decoration: none;
+			color: #3b54d1;
+			z-index:9999;
+			
+		}
+		a:hover {
+			text-decoration: line-through;
+			z-index:999 ;
+		}
+		img {
+			position: relative;
+			display: block;
+			top: 50px;
+			left: 25px;
+			/* color: #3b54d1; */
+			 color:#141a3b;
+			/* opacity: 0.9; */
+		}
+		#img2{
+			position: relative;
+			display: block;
+			top: 350px;
+			left: 43%;
+			/* color: #3b54d1; */
+			 color:#141a3b;
+		
+		}
+		p{
+			position: relative;
+			display: block;
+			top: 270px;
+			color: black;
+			text-decoration: line beige;
+			/* background-image: url('../image/1.png') 0.9; */
+		}
+		#video{
+			margin: 0%;
+			padding: 0%;
+			opacity: 0.9;
+			position: absolute;
+			left: 33%;
+			top: 130px;
+		}
+		.number {
+		     position: absolute;
+		       font-weight: bold;
+		      /* color: white; */
+			 color: black;
+		       pointer-events: none;
+		       animation: float 20s ease forwards;
+		}
+		
+		@keyframes float {
+		    0% {
+		            transform: translateY(0) rotate(0deg);
+		            opacity: 1;
+		        }
+		        100% {
+		            transform: translateY(-150px) rotate(360deg);
+		            opacity: 0;
+		        }
+		}
+	
+		</style>
+	</head>
+	<body>
+		<div>
+		<h4>
+			Soffione
+		</h4>
+		<h5><a href="portfolio.html">portfolio</a></h5>
+		<img src="../image/soffione/9.GIF" width="150px"/>
+		<p>
+			<b>A</b> causa della sempre più alta velocità e della crescente diffusione di Internet, chiunque ha la possibilità di avere informazioni semplicemente attraverso una ricerca; tuttavia ogni nostro momento in rete viene registrato.
+			La divulgazione che avviene oggi di tutte queste informazioni è come un fiore di dente di leone divenuto soffione , i cui semi si diffondono e si spargono nello spazio in modo incontrollato e casuale.
+            <br/>
+			<b>Difatti</b>, il lavoro elaborato ha come simbolo dell’intelligenza artificiale il dente di leone che viene soffiato dal pubblico sopra ad uno schermo.
+			Tramite un rilevamento del respiro della persona, i dati attaccati al fiore si disperdono in una forma binaria, mentre la telecamera dello schermo cattura il volto dello spettatore e lo sovrappone ai semi diffondendolo nello spazio esterno.
+			Tale funzione viene utilizzata per mostrare ai utenti i rischi potenziali che comporta su due livelli: in primo luogo è la rapida e incontrollabile diffusione delle informazioni, soprattutto quando la condivisione di queste diventa virale, infine, il costante rilevamento dei nostri movimenti online ci mette nella condizione di diffondere involontariamente anche dati sensibili.
+			
+		</p>
+		<div id="img2"><img id="imgsot"src="../image/soffione/8GIF.GIF" width="100px"/>
+		
+		</div>
+		<div id='video'>
+			<video width="450px" autoplay controls>
+				<source src="../video/video1.mp4">
+			</video>
+		</div>
+		</div>
+	</body>
+	  <script src="../js/soffione.js"></script>
+</html>
