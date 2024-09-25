@@ -4,37 +4,169 @@
 		<meta charset="utf-8">
 		<title></title>
 		<style>
+			@font-face {
+			    font-family: 'MyFont'; /* 自定义字体的名称 */
+			    src: url('fonts/MysteryTypewriter.ttf') format('truetype');
+			    font-weight: normal;
+			    font-style: normal;
+			}
 			*{
 				margin: 0%;
 				padding: 0%;
+				box-sizing: border-box;
 				
 			}
 			body, html {
 			    height: 100%;
 			}
 			body {
-			 background-image: url('image/bg.jpg'); /* 替换为你的背景图片路径 */ 
-			 background-color: black;
-			 background-size: cover;
-			 background-position: center;
-			 background-repeat: no-repeat;
-			 display: flex;
-			 justify-content: center;
-			 align-items: center;
-			 position: relative;
+			 font-family: 'MyFont', sans-serif; 
+			 background-image: url('image/1.png');
+			 background-size: cover;  /* 确保背景图片覆盖整个屏幕 */
+			 background-position: center;  /* 背景图片居中显示 */
+			 background-repeat: no-repeat;  /* 背景图片不重复 */
 			 overflow: clip;
 			}
+		div{
+			top: 10px;
+				position: relative;
+				display: block;
+				
+			}
+		h3{
+			position: relative;
+			top: 40px;
+			left: 15px;
+			display: block;
+			color: #3b54d1;
+			/* color:#141a3b; */
+			z-index: 99999;
+		}
+		h4{
+			position: relative;
+			display: block;
+			top: 0px;
+			left: 15px;
+			color: #3b54d1;
 			
+		}
+		
+		a{
+			text-decoration: none;
+			color: #3b54d1;
+		}
+		a:hover{
+			text-decoration: line-through;
+		}
+		
+		#click-area {
+		    position: relative;
+		    height: 100%;
+		    width: 100%;
+			 z-index: 1; /* 确保这个区域在其他元素下 */
+		}
+		
+		.word {
+		    position: absolute;
+		    font-size: 1rem;
+		   /* color:#141a3b; */
+		   color: #3b54d1;
+		    white-space: nowrap;
+		    transform: translate(-50%, -50%); /* 中心对齐 */
+			pointer-events: none; /* 禁止对单词的鼠标事件 */
+		}
+		
 			
 		</style>
 	</head>
 	<body>
 		<div>
-			<p>
-				<a href="https://olioliolili.github.io/Danza-moderna/">'Danza-moderna'</a>
-				<a href="https://vibejourneytickets.com/"> "Vibe-journey" </a>
-			</p>
+			<h4>Gong xiaoxiao</h4>
+			<h3><!-- <a href="html/portfolio.html"> -->
+				"Hello, welcome. "<br/>
+				“I am Gong.”
+			<!-- </a> --></h3>
+			
+			<!-- <h6>ins : olili_lililil</h6> -->
 		</div>
+		<div id="click-area"></div>
 		
 	</body>
+	<script>
+		
+		const sentence = "' A boring person on the internet ☉_☉. '";
+		const words = sentence.split(" "); // 将句子分割成单词
+		let index = 0; // 当前显示的单词索引
+		
+		
+		
+		// 获取点击区域
+		const clickArea = document.getElementById('click-area');
+		
+		
+		// 监听点击事件
+		clickArea.addEventListener('click', (event) => {
+		    if (index < words.length) {
+		        // 创建一个新的 <span> 元素来显示单词
+		        const wordElement = document.createElement('span');
+		        wordElement.classList.add('word');
+		        wordElement.textContent = words[index];
+		        
+		        // 获取鼠标点击的位置
+		        const x = event.clientX;
+		        const y = event.clientY;
+		
+		        // 设置单词的位置
+		        wordElement.style.left = x + 'px';
+		        wordElement.style.top = y + 'px';
+		        
+		        // 将单词添加到页面上
+		        clickArea.appendChild(wordElement);
+		
+		        // 更新索引以显示下一个单词
+		        index++;
+				
+				 // 如果所有单词都已显示，则添加 <a> 标签
+				        if (index === words.length) {
+				            // 创建 <a> 标签
+				            const linkElement = document.createElement('a');
+				            linkElement.href = 'html/portfolio.html'; // 设置链接地址
+				            linkElement.textContent = 'portfolio'; // 设置链接文本
+				            linkElement.style.position = 'absolute';
+				            linkElement.style.left = x + 'px'; // 设置链接居中显示
+				            linkElement.style.top = (y + 30) + 'px'; // 将链接放置在页面下方
+				            linkElement.style.fontSize = '2.5rem'; // 设置链接字体大小
+				            linkElement.style.color = '#3b54d1'; // 设置链接颜色
+				            linkElement.style.textDecoration = 'underline'; // 设置下划线
+				            linkElement.style.transform = 'line-through'; // 水平居中
+				
+				            // 将 <a> 标签添加到页面上
+				            clickArea.appendChild(linkElement);
+				        }
+				    }
+				});
+		    
+		           // 如果所有单词都已显示，则添加 <a> 标签
+		   //         if (index === words.length) {
+		   //             // 创建 <a> 标签
+		   //             const linkElement = document.createElement('a');
+		   //             linkElement.href = 'html/portfolio.html'; // 设置链接地址
+		   //             linkElement.textContent = 'portfolio'; // 设置链接文本
+		   //             linkElement.style.position = 'absolute';
+		   //             linkElement.style.left = x + 'px'; // 将链接放置在最后一个单词的位置
+		   //             linkElement.style.top = (y + 30) + 'px'; // 让链接出现在单词下面
+		   //             linkElement.style.fontSize = '2.5rem'; // 设置链接字体大小
+		   //             linkElement.style.color = '#3b54d1'; // 设置链接颜色
+		   //             linkElement.style.textDecoration = 'line-through'; // 设置下划线
+		   
+		   //             // 将 <a> 标签添加到页面上
+		   //             clickArea.appendChild(linkElement);
+		   //         }
+		   //     } else {
+		   //         // 所有单词显示完后，重置（可选）
+		   //         clickArea.innerHTML = ""; // 清空所有单词
+		   //         index = 0; // 重置索引
+		   //     }
+		   // });
+	</script>
 </html>
