@@ -2,260 +2,226 @@
 <html>
 	<head>
 		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="shortcut icon" href="../favicon2.ico"/>	
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.12.313/pdf.min.js">
+		</script>
 		<title></title>
-		<link rel="shortcut icon" href="../favicon2.ico"/>
-		<style type="text/css">
-			@font-face {
-			    font-family: 'MyFont'; /* 自定义字体的名称 */
-			    src: url('../fonts/MysteryTypewriter.ttf') format('truetype');
-			    font-weight: normal;
-			    font-style: normal;
-			}
-			
-			*{
-				margin: 0%;
-				padding: 0%;
-			}
-			
-			body, html{
-				height: 100%;
-			}
-			
-			body{
-				font-family: 'MyFont', sans-serif;
-				/* background-color: aliceblue; */
-				background-color: whitesmoke;
-				background-image: url('../image/2.png');
-				background-clip: border-box;
-				border-radius: 3px;
-				/* background-size: 500px 350px; */
-				background-size: cover;
-				background-position: center;
-				background-repeat: no-repeat;
-				overflow: clip;
-				z-index: -9999
-			}
-			
-			#image-container {
-			    position: relative;
-			    height: 100%;
-			    width: 100%;
-				z-index: 1
-			}
-			.image-box {
-			    position: absolute;
-			    width: 200px;
-			    text-align: center;
-				
-			}
-			.image-text {
-			    display: block;
-			    margin-top:2px;
-			    color: #3b54d1; /* 文字颜色 */
-			    font-size: 15px;
-			    background-color: transparent; /* 背景颜色带透明度 */
-			   /* padding: 5px; */
-			    border-radius: 3px;
-				z-index: 9999;
-			}
-			
-			.random-image {
-			    position: absolute;
-				display: block;
-			    width: 100px;
-			    height: auto; /* 保持图片宽高比 */
-				margin: 25px;
-				z-index: 2;
-				font-size: 20px;
-				opacity: 0.9;
-			}
-			#text{
-				position: relative;
-				display: block;
-				
-			}
-			
-		#page-title {
-			font-family: 'MyFont', sans-serif;
-		    position: absolute;
-			display:block;
-		    top: 10px;
-		    left: 15px;
-		    z-index: 3; /* 确保标题在图片和背景之上 */
-		    color: #3b54d1;
-		    /* font-size: 15px; */ /* 设置标题的字体大小 */
-		    padding: 0px;
-			margin: 10px;
-		   
+	</head>
+	<style type="text/css">
+		@font-face {
+		    font-family: 'MyFont'; /* 自定义字体的名称 */
+		    /* src: url('./fonts/MysteryTypewriter.ttf') format('truetype'); */
+			src: url('../fonts/Galmuri9.ttf') format('truetype');
+		    font-weight: normal;
+		    font-style: normal;
 		}
-		a{
-			text-decoration: none;
-			color: #3b54d1;
+		*{
 			margin: 0%;
 			padding: 0%;
+		}
+		body{
+			background-color: black;
+			/* background-image: url('img/bg.png'); */
+			background-size: cover;
 			
 		}
-		a:hover{
-			text-decoration: line-through;
-			color:#2134d2 ;
+		
+		#page-title {
+			font-family: 'MyFont', sans-serif;
+		    position: relative;
+			display:block;
+		    color: #a4dde4;
+		    /* font-size: 15px; */ /* 设置标题的字体大小 */
+		   
 		}
-		h4{
-			left: 10%;
-			font-size: 20px;
-			color:#141a3b;
+		#a1{
+			font-family: 'MyFont', sans-serif;
+			color: aqua;
 		}
-		#push{
-			color:brown
+		#a2{
+			font-family: 'MyFont', sans-serif;
+			color: yellow;
 		}
+		#a3{
+			font-family: 'MyFont', sans-serif;
+			color: hotpink;
+		}
+		a{
+			position: relative;
+			display: block;
 			
+		}
+		button{
+			background-color: transparent;
+			color:aliceblue
 			
-		</style>
-	</head>
+		}
+		button:hover{
+			color: aqua;
+			background-color: transparent;
+		}
+		.pdf-controls{
+			background-color: transparent;
+			color: transparent;
+		}
+	div{
+		margin: 10px;
+	}
+		 #pdf-container {
+			 position: absolute;
+			 top:140px;
+		      display: flex;
+		      flex-direction: column;
+		      align-items: center; /* 水平居中 */
+		      /* border: 1px solid #ccc; *//* 边框 */
+		     padding: 10px; /* 内边距 */
+		      width: 100%; /* 可根据需要调整宽度 */
+		      max-width: 800px; /* 最大宽度 */
+			  left: 20%;
+		    }
+		
+		    #pdf-render {
+			
+		/*     border: 1px solid #ccc; */
+		      width: 80%;
+		 /*     margin-bottom: 10px; /* 下方留出一些间距 */ 
+		    }
+			#img1{
+				transition: 0.4s; 
+			}
+			#img1:hover{
+				content: url('../image/img/9.GIF');
+			}
+			#img2{
+				transition: 0.4s; 
+			}
+			#img2:hover{
+				content: url('../image/img/6.png');
+			}
+			#img3{
+				transition: 0.4s; 
+			}
+			#img3:hover{
+				content: url('../image/img/animo.gif');
+			}
+			#index{
+				text-decoration: none;
+				font-family: 'MyFont', sans-serif;
+				color: #a4dde4;
+			}
+			#index:hover{
+				filter: brightness(120%);
+			}
+	</style>
 	<body>
-		  <div id="image-container">
-		        <div class="image-box">
-		            <img src="../image/2-1.png" alt="Image 1" class="random-image">
-		            <span class="image-text"><a href="vibe-journey.html" target="_self">vibe journey</span>
-		        </div>
-		        <div class="image-box">
-		            <img src="../image/2-2.png" alt="Image 2" class="random-image">
-		            <span class="image-text"><a href="soffione.html" target="_self">soffione<a></span>
-		        </div>
-		        <div class="image-box">
-		            <img src="../image/2-3.png" alt="Image 3" class="random-image" >
-		            <span id="push" class="image-text"><a href="danza-moderna.html" target="_self">danza moderna<a></span>
-		        </div>
-				<div class="image-box">
-					<span class="image-text"><a href="#" target="_blank">PUSH<a></span>
-				    <img src="../favicon.ico" alt="Image 4" class="random-image" >
-				    <!-- <span class="image-text"><a href="#" target="_blank">albero dei <br/>desideri<a></span> -->
-				</div>
-				<div class="image-box">
-				    <img src="../image/2-3.png" alt="Image 4" class="random-image" >
-				    <!-- <span class="image-text"><a href="#" target="_blank">albero dei <br/>desideri<a></span> -->
-				</div>
-				<div class="image-box">
-				    <img src="../favicon2.ico" alt="Image 4" class="random-image" >
-				    <!-- <span class="image-text"><a href="#" target="_blank">albero dei <br/>desideri<a></span> -->
-				</div>
-				<div class="image-box">
-				    <img src="../favicon.ico" alt="Image 4" class="random-image" >
-				    <!-- <span class="image-text"><a href="#" target="_blank">albero dei <br/>desideri<a></span> -->
-				</div>
-				<div class="image-box">
-				    <img src="../favicon2.ico" alt="Image 4" class="random-image" >
-				    <!-- <span class="image-text"><a href="#" target="_blank">albero dei <br/>desideri<a></span> -->
-				</div>
-				<div class="image-box">
-				    <img src="../favicon.ico" alt="Image 4" class="random-image" >
-				    <!-- <span class="image-text"><a href="#" target="_blank">albero dei <br/>desideri<a></span> -->
-				</div>
-				<div class="image-box">
-				    <img src="../favicon2.ico" alt="Image 4" class="random-image" >
-				    <!-- <span class="image-text"><a href="#" target="_blank">albero dei <br/>desideri<a></span> -->
-				</div>
-				<div class="image-box">
-				    <img src="../favicon.ico" alt="Image 4" class="random-image" >
-				    <!-- <span class="image-text"><a href="#" target="_blank">albero dei <br/>desideri<a></span> -->
-				</div>
-				<div class="image-box">
-				    <img src="../favicon2.ico" alt="Image 4" class="random-image" >
-				    <!-- <span class="image-text"><a href="#" target="_blank">albero dei <br/>desideri<a></span> -->
-				</div>
-				<div class="image-box">
-				    <img src="../favicon.ico" alt="Image 4" class="random-image" >
-				    <!-- <span class="image-text"><a href="#" target="_blank">albero dei <br/>desideri<a></span> -->
-				</div>
-				<div class="image-box">
-				    <img src="../favicon2.ico" alt="Image 4" class="random-image" >
-				    <!-- <span class="image-text"><a href="#" target="_blank">albero dei <br/>desideri<a></span> -->
-				</div>
-				
+		<div id="page-title">
+			<a href="../index.html" id="index"><h5 class="1index">Gong xiaoxiao
+			</h5></a>
+		<h4 >portfolio</h4>	
+		<h4>/☉_☉</h4>
+		<h4>/</h4>
+		</div>
+		
+		  <div class="pdf-viewer-container">
+			<a href="#" onclick="loadPdf(event, '../pdf/soffione.pdf')" id="a1"><img src='../image/img/3.png' width="78px" height="65px" id="img1"><br/>Soffione
+			<br/><a href="soffione.html">link</a></a>
+			<a href="#" onclick="loadPdf(event, '../pdf/VIBE.pdf')" id="a2"><img src='../image/img/2.png' width="75px" id="img2"><br/>Vibe journey
+			<br/><a href="https://vibejourneytickets.com/" target="_blank">link</a></a>
+		    <a href="#" onclick="loadPdf(event, '../pdf/danza.pdf')" id="a3"><img src='../image/img/1.png' width="75px" id="img3"><br/>Danza moderna
+			<br/><a href="https://olioliolili.github.io/Danza-moderna/" target="_blank">link</a></a>
+		    <div id="pdf-container">
+		      <canvas id="pdf-render"></canvas>
+		      <div class="pdf-controls">
+		        <button onclick="prevPage()"> < </button>
+		        <span id="page-info">第 <span id="page-num"></span> 页，共 <span id="page-count"></span> 页</span>
+		        <button onclick="nextPage()"> > </button>
+		      </div>
 		    </div>
-			
-			
-			
-			
-			
-		 <div id="page-title"><h5 class="1index"><a href="../index.html">Gong xiaoxiao</a></h5>	
-		 <h4 >portfolio</h4>	</div>
+		  </div>
+		  
+		
 	</body>
 	
+	</script>
 	<script type="text/javascript">
-		// 获取图片容器和所有图片盒子
-		const container = document.getElementById('image-container');
-		const imageBoxes = document.querySelectorAll('.image-box');
+		let pdfDoc = null;
+		let pageNum = 1;
+		let pageIsRendering = false;
+		let pageNumIsPending = null;
+		const scale = 0.7;  // 缩放比例
+		const canvas = document.getElementById('pdf-render');
+		const ctx = canvas.getContext('2d');
 		
-		// 获取容器的宽度和高度
-		const containerWidth = window.innerWidth;
-		const containerHeight = window.innerHeight;
+		// 加载 PDF
+		function loadPdf(event, url) {
+		  event.preventDefault();
 		
-		// 函数：生成随机整数
-		function getRandomInt(min, max) {
-		    return Math.floor(Math.random() * (max - min + 1)) + min;
+		  // 如果有 PDF 正在显示，先重置页码并清除现有 PDF
+		  if (pdfDoc) {
+		    pdfDoc = null;
+		    pageNum = 1;
+		    ctx.clearRect(0, 0, canvas.width, canvas.height);
+		  }
+		
+		  pdfjsLib.getDocument(url).promise.then(pdf => {
+		    pdfDoc = pdf;
+		    document.getElementById('page-count').textContent = pdf.numPages;
+		    renderPage(pageNum);
+		  }).catch(error => {
+		    console.error('无法加载 PDF:', error);
+		  });
 		}
 		
-		// 函数：检测两个矩形是否重叠
-		function isOverlap(rect1, rect2) {
-		    return !(rect1.right < rect2.left || 
-		             rect1.left > rect2.right || 
-		             rect1.bottom < rect2.top || 
-		             rect1.top > rect2.bottom);
-		}
+		// 渲染
+		function renderPage(num) {
+		  pageIsRendering = true;
 		
-		// 函数：生成随机不重叠的位置
-		function getRandomPosition(existingRects, boxWidth, boxHeight) {
-		    let isOverlapping;
-		    let randomX, randomY, newRect;
-		    
-		    do {
-		        // 生成随机位置
-		        randomX = getRandomInt(0, containerWidth - boxWidth);
-		        randomY = getRandomInt(0, containerHeight - boxHeight);
-		        
-		        // 定义新图片的边界
-		        newRect = {
-		            left: randomX,
-		            top: randomY,
-		            right: randomX + boxWidth,
-		            bottom: randomY + boxHeight
-		        };
-		        
-		        // 检查是否与已有的图片重叠
-		        isOverlapping = existingRects.some(rect => isOverlap(rect, newRect));
-		        
-		    } while (isOverlapping);
-		    
-		    // 返回随机生成的不重叠的位置
-		    return { left: randomX, top: randomY };
-		}
+		  pdfDoc.getPage(num).then(page => {
+		    const viewport = page.getViewport({ scale });
+		    canvas.height = viewport.height;
+		    canvas.width = viewport.width;
 		
-		// 存储已放置图片的位置
-		const existingRects = [];
+		    const renderContext = {
+		      canvasContext: ctx,
+		      viewport: viewport
+		    };
 		
-		// 随机放置和旋转每个图片盒子
-		imageBoxes.forEach(box => {
-		    const boxWidth = 200;
-		    const boxHeight = 200;
-		    
-		    // 生成随机不重叠的位置
-		    const { left, top } = getRandomPosition(existingRects, boxWidth, boxHeight);
-		    
-		    // 随机旋转角度 (-180 到 180 度)
-		    const randomRotation = getRandomInt(-180, 180);
-		    
-		    // 设置盒子的随机位置和旋转
-		    box.style.left = left + 'px';
-		    box.style.top = top + 'px';
-		    box.style.transform = `rotate(${randomRotation}deg)`;
-		    
-		    // 保存当前图片的位置边界
-		    existingRects.push({
-		        left: left,
-		        top: top,
-		        right: left + boxWidth,
-		        bottom: top + boxHeight
+		    page.render(renderContext).promise.then(() => {
+		      pageIsRendering = false;
+		      if (pageNumIsPending !== null) {
+		        renderPage(pageNumIsPending);
+		        pageNumIsPending = null;
+		      }
 		    });
-		});
+		
+		    document.getElementById('page-num').textContent = num;
+		  });
+		}
+		
+		// 显示上一页
+		function prevPage() {
+		  if (pageNum <= 1) return;
+		  pageNum--;
+		  queueRenderPage(pageNum);
+		}
+		
+		// 显示下一页
+		function nextPage() {
+		  if (pageNum >= pdfDoc.numPages) return;
+		  pageNum++;
+		  queueRenderPage(pageNum);
+		}
+		
+		// 等待渲染页面
+		function queueRenderPage(num) {
+		  if (pageIsRendering) {
+		    pageNumIsPending = num;
+		  } else {
+		    renderPage(num);
+		  }
+		}
+
+		
 	</script>
 </html>
